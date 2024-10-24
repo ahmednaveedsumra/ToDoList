@@ -1,11 +1,9 @@
 const routes= require("express").Router();
+const {createUser,getAllUsers,updateUser} = require("../controllers/userController");
 
-routes.get("/get-all-users",(req,res)=>{
-    res.send("get all users");
-});
+routes.get("/get-all-users",getAllUsers);
 
-routes.get("/create-user",(req,res)=>{
-    res.send("create user api");
-});
+routes.post("/create-user",createUser);
+routes.get("/update-user",updateUser);
 
 module.exports=routes;
